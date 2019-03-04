@@ -1,0 +1,23 @@
+<div *ngIf="isLoginError" class="red-text center error-message">
+  Incorrect username or password
+</div>
+Login works
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="text" name="UserName" placeholder="Username" 
+        required [(ngModel)]="model.UserName" name="UserName" #name="ngModel">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <input type="password" name="Password" placeholder="Password" 
+        required [(ngModel)]="model.Password" name="Password" #name="ngModel">
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <button type="submit" [disabled]="!loginForm.form.valid">Submit</button>
+    </div>
+  </div>
+</form>
