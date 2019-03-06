@@ -22,7 +22,7 @@ import { AppConstants } from './shared/app-constants';
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes, { enableTracing: true } // <-- debugging purposes only
+      appRoutes, { enableTracing: false } // <-- debugging purposes only
     ),
     HttpClientModule,
     EquipmentModule,
