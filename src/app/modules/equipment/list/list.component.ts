@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppConstants } from '../../../shared/app-constants';
 
 @Component({
-  selector: 'app-list',
+  selector: 'app-main',
   templateUrl: './equipment-list.html',
   styles: []
 })

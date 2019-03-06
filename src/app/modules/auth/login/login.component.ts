@@ -13,8 +13,8 @@ export class LoginComponent implements OnInit {
 
   isLoginError: boolean = false;
   model : any = {
-    UserName: 'Sample User',
-    Password: 'aaaa'
+    UserName: 'sajithawattage',
+    Password: 'f68D5h86'
   };
 
   constructor(private authService: AuthService, private router: Router) { }

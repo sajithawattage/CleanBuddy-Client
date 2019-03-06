@@ -8,7 +8,10 @@ import { appRoutes } from '../../shared/app-routes';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(
+      appRoutes, { enableTracing: false } // <-- debugging purposes only
+    )
   ],
   declarations: [LoginComponent]
 })
