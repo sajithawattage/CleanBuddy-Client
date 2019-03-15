@@ -1,33 +1,48 @@
-//system imports
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-//application imports
-import { AppComponent } from './app.component';
-import { appRoutes } from './shared/app-routes';
-import { AuthGuard } from './modules/auth/auth-guard';
-import { AuthModule } from './modules/auth/auth.module';
-import { MainModule } from './modules/main/main.module';
-import { AuthService } from './common/auth-service';
-import { AppConstants } from './shared/app-constants';
+import { DataTablesModule } from 'angular-datatables';
 
+//components
+import { AppComponent } from './components/index/app.component';
+import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EquipmentListComponent } from './components/equipment/list/equipment-list/equipment-list.component';
+
+//common
+import { routes } from './common/config/app-routes';
+import { AppConstants } from './common/constant/app-constants';
+import { AuthGuard } from './common/config/auth-guard';
+
+//services
+import { AuthService } from './services/auth/auth-service';
+import { EquipmentManageComponent } from './components/equipment/manage/equipment-manage/equipment-manage.component';
+import { EquipmentDetailComponent } from './components/equipment/detail/equipment-detail/equipment-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    DashboardComponent,
+    EquipmentListComponent,
+    EquipmentManageComponent,
+    EquipmentDetailComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(
-      appRoutes, { enableTracing: false } // <-- debugging purposes only
-    ),
+    RouterModule,
+    RouterModule.forRoot(routes),	
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
-    AuthModule,
-    MainModule
+    DataTablesModule
   ],
   providers: [AuthGuard, AuthService, AppConstants],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
 
+export class AppModule { }

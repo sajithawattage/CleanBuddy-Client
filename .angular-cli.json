@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "shs-client-app"
+    "name": "cleaner-client"
   },
   "apps": [
     {
@@ -22,14 +22,18 @@
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "./assets/vendor/fontawesome-free/css/all.min.css",
-        "./assets/css/sb-admin-2.css"
+        "./assets/css/sb-admin-2.css",
+        "./assets/vendor/datatables/dataTables.bootstrap4.min.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "./assets/vendor/jquery-easing/jquery.easing.min.js",
         "./assets/vendor/chart.js/Chart.min.js",
-        "./assets/js/sb-admin-2.min.js"
+        "./assets/js/sb-admin-2.min.js",
+        "../node_modules/jquery/dist/jquery.js",
+        "../node_modules/datatables.net/js/jquery.dataTables.js",
+        "./assets/vendor/datatables/dataTables.bootstrap4.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -64,28 +68,6 @@
   },
   "defaults": {
     "styleExt": "css",
-    "class": {
-      "spec": false
-    },
-    "component": {
-      "inlineStyle": true,
-      "inlineTemplate": true,
-      "spec": false
-    },
-    "directive": {
-      "spec": false
-    },
-    "guard": {
-      "spec": false
-    },
-    "module": {
-      "spec": false
-    },
-    "pipe": {
-      "spec": false
-    },
-    "service": {
-      "spec": false
-    }
+    "component": {}
   }
 }

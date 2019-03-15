@@ -8,10 +8,21 @@ import { AuthService } from '../../../common/auth-service';
   styles: []
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router, private authService: AuthService) { }
+  active:string;
+  constructor(private router: Router, private authService: AuthService) { 
+
+    // Detect route changes for active sidebar menu
+ 		this.router.events.subscribe((val) => {
+      this.routeChanged(val);
+    });
+  }
 
   ngOnInit() {
     
+  }
+
+  routeChanged(val){
+    this.active = val.url;
   }
 
   Logout() {

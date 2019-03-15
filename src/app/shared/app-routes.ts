@@ -7,11 +7,8 @@ import { HomeComponent } from "../modules/main/home/home.component";
 export const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: '', component: HomeComponent, canActivate:[AuthGuard] },
-    { path: 'home', component: HomeComponent, canActivate:[AuthGuard] },
-    
-];
-
-export const mainRoute : Routes = [
-    { path: 'equipmentlist',  component: EquipmentListComponent, canActivate:[AuthGuard] }
+    { path: 'home', component: HomeComponent, canActivate:[AuthGuard], children : [
+        { path: 'equipmentlist',  component: EquipmentListComponent, canActivate:[AuthGuard] }
+    ], }
 ];
 
