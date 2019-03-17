@@ -19,8 +19,10 @@ import { AuthGuard } from './common/config/auth-guard';
 
 //services
 import { AuthService } from './services/auth/auth-service';
+import { EquipmentService } from './services/equipment-service';
 import { EquipmentManageComponent } from './components/equipment/manage/equipment-manage/equipment-manage.component';
 import { EquipmentDetailComponent } from './components/equipment/detail/equipment-detail/equipment-detail.component';
+import { MenuPartialComponent } from './components/partial/menu-partial/menu-partial.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { EquipmentDetailComponent } from './components/equipment/detail/equipmen
     DashboardComponent,
     EquipmentListComponent,
     EquipmentManageComponent,
-    EquipmentDetailComponent
+    EquipmentDetailComponent,
+    MenuPartialComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { EquipmentDetailComponent } from './components/equipment/detail/equipmen
     HttpClientModule,
     DataTablesModule
   ],
-  providers: [AuthGuard, AuthService, AppConstants],
+  providers: [AuthGuard, AuthService, AppConstants, EquipmentService],
   bootstrap: [AppComponent]
 })
 
