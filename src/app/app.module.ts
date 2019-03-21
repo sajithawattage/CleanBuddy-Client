@@ -23,6 +23,7 @@ import { EquipmentService } from './services/equipment-service';
 import { EquipmentManageComponent } from './components/equipment/manage/equipment-manage/equipment-manage.component';
 import { EquipmentDetailComponent } from './components/equipment/detail/equipment-detail/equipment-detail.component';
 import { MenuPartialComponent } from './components/partial/menu-partial/menu-partial.component';
+import { CommonTaskComponent } from './components/partial/common-task/common-task.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MenuPartialComponent } from './components/partial/menu-partial/menu-par
     EquipmentListComponent,
     EquipmentManageComponent,
     EquipmentDetailComponent,
-    MenuPartialComponent
+    MenuPartialComponent,
+    CommonTaskComponent
   ],
   imports: [
     BrowserModule,
