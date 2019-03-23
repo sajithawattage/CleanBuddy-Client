@@ -9,66 +9,69 @@
                 <!-- Overflow Hidden -->
                 <div class="card mb-12">
                     <div class="card-body">
-                        <div class="user">
+                        <form #equipmentForm="ngForm" (ngSubmit)="onSubmit()">
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="txtEquipmentCode">Code</label>
                                     <input type="text" class="form-control form-control-user" id="txtEquipmentCode"
-                                        placeholder="">
+                                        placeholder="" [(ngModel)]="model.Code" name="Code">
                                 </div>
                                 <div class="col-sm-6">
-                                        <label for="txtEquipBrand">Brand</label>
-                                        <input type="email" class="form-control" id="txtEquipBrand" placeholder="">
+                                    <label for="txtEquipBrand">Brand</label>
+                                    <input type="email" class="form-control" id="txtEquipBrand" placeholder=""
+                                        [(ngModel)]="model.Brand" name="Brand">
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="txtEquipModel">Model</label>
-                                    <input type="text" class="form-control" id="txtEquipModel" placeholder="">
+                                    <input type="text" class="form-control" id="txtEquipModel" placeholder=""
+                                        [(ngModel)]="model.Model" name="Model">
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="ddlEquipCategory">Category</label>
-                                    <select type="text" class="form-control" id="ddlEquipCategory">
+                                    <select type="text" class="form-control" id="ddlEquipCategory"
+                                        [(ngModel)]="model.CategoryId" name="CategoryId">
                                         <option value="-1">Please select a category</option>
                                         <option value="1">Category 1</option>
                                     </select>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <label for="txtEquipPurchesedFrom">Purchesed From</label>
-                                <input type="text" class="form-control" id="txtEquipPurchesedFrom" placeholder="">
+                                <input type="text" class="form-control" id="txtEquipPurchesedFrom" placeholder=""
+                                    [(ngModel)]="model.PurchasedFrom" name="PurchasedFrom">
                             </div>
-
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="dtEquipPurchasedDate">Purchased Date</label>
-                                    <input type="date" class="form-control" id="dtEquipPurchasedDate" placeholder="">
+                                    <!-- <input type="date" class="form-control" id="dtEquipPurchasedDate" placeholder=""
+                                        [(ngModel)]="model.PurchasedDate" name="PurchasedDate"> -->
+                                    <p-calendar [(ngModel)]="model.PurchaseDate" name="PurchasedDate"
+                                        id="dtEquipPurchasedDate" [dateFormat]="yy/mm/dd">
+                                    </p-calendar>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="dtWarrentyExpireDate">Warrenty Expire Date</label>
-                                    <input type="date" class="form-control" id="dtWarrentyExpireDate" placeholder="">
+                                    <!-- <input type="date" class="form-control" id="dtWarrentyExpireDate" placeholder=""
+                                        [(ngModel)]="model.WarrentyExpireDate" name="WarrentyExpireDate"> -->
+                                    <p-calendar [(ngModel)]="model.WarrantyExpire" name="WarrantyExpire"
+                                        [dateFormat]="yy/mm/dd">
+                                    </p-calendar>
                                 </div>
                             </div>
 
                             <div id="button-placeholder" class="float-right">
-                                <button class="d-inline btn btn-primary">Save</button>
-                                <button class="d-inline btn btn-default">Cancel</button>
+                                <button class="d-inline btn btn-primary" type="submit">Save</button>
+                                <button class="d-inline btn btn-default" type="reset">Cancel</button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="card mb-12">
-                    <div class="card-header">
-                        <h5>Common Tasks</h5>
-                    </div>
-                    <div class="card-body">
-
-                    </div>
-                </div>
-
+                {{diagnostic}}
+                <app-common-task></app-common-task>
             </div>
         </div>
     </div>
