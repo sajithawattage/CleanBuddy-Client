@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { DataTablesModule } from 'angular-datatables';
 import { CalendarModule } from 'primeng/calendar';
 
@@ -27,6 +27,7 @@ import { AuthGuard } from './common/config/auth-guard';
 //services
 import { AuthService } from './services/auth/auth-service';
 import { EquipmentService } from './services/equipment-service';
+import { TokenInterceptor } from './services/auth/token-interceptor';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,11 @@ import { EquipmentService } from './services/equipment-service';
     DataTablesModule,
     CalendarModule
   ],
-  providers: [AuthGuard, AuthService, AppConstants, EquipmentService],
+  providers: [AuthGuard, AuthService, AppConstants, EquipmentService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 

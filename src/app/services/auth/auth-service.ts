@@ -11,6 +11,10 @@ export class AuthService {
     public userAuthentication(userName, password) {
         var data = "username=" + userName + "&password=" + password + "&grant_type=password";
         var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-urlencoded','No-Auth':'True' });
-        return this.http.post(this.constant.serverWithApiUrl + '/token', data, { headers: reqHeader });
+        return this.http.post(this.constant.serverWithApiUrl + 'token', data, { headers: reqHeader });
+    }
+
+    public getToken() : string {
+        return localStorage.getItem('userToken');
     }
 }

@@ -14,19 +14,28 @@
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="txtEquipmentCode">Code</label>
                                     <input type="text" class="form-control form-control-user" id="txtEquipmentCode"
-                                        placeholder="" [(ngModel)]="model.Code" name="Code">
+                                        placeholder="" [(ngModel)]="model.Code" name="Code" required>
+                                    <div *ngIf="equipmentForm.submitted && Code.invalid" class="invalid-feedback">
+                                        <div *ngIf="Code.errors.required">Code is required</div>
+                                    </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="txtEquipBrand">Brand</label>
                                     <input type="email" class="form-control" id="txtEquipBrand" placeholder=""
-                                        [(ngModel)]="model.Brand" name="Brand">
+                                        [(ngModel)]="model.Brand" name="Brand" required>
+                                        <div *ngIf="equipmentForm.submitted && Brand.invalid" class="invalid-feedback">
+                                            <div *ngIf="Brand.errors.required">Brand is required</div>
+                                        </div>
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <div class="col-sm-6 mb-3 mb-sm-0">
                                     <label for="txtEquipModel">Model</label>
                                     <input type="text" class="form-control" id="txtEquipModel" placeholder=""
-                                        [(ngModel)]="model.Model" name="Model">
+                                        [(ngModel)]="model.Model" name="Model" required>
+                                        <div *ngIf="equipmentForm.submitted && Model.invalid" class="invalid-feedback">
+                                            <div *ngIf="Model.errors.required">Model is required</div>
+                                        </div>  
                                 </div>
                                 <div class="col-sm-6">
                                     <label for="ddlEquipCategory">Category</label>
@@ -40,24 +49,29 @@
                             <div class="form-group">
                                 <label for="txtEquipPurchesedFrom">Purchesed From</label>
                                 <input type="text" class="form-control" id="txtEquipPurchesedFrom" placeholder=""
-                                    [(ngModel)]="model.PurchasedFrom" name="PurchasedFrom">
+                                    [(ngModel)]="model.PurchasedFrom" name="PurchasedFrom" required>
+                                    <div *ngIf="equipmentForm.submitted && PurchasedFrom.invalid" class="invalid-feedback">
+                                        <div *ngIf="PurchasedFrom.errors.required">Purchased From is required</div>
+                                    </div>
                             </div>
                             <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
+                                <div class="ui-g-12 ui-md-6">
                                     <label for="dtEquipPurchasedDate">Purchased Date</label>
-                                    <!-- <input type="date" class="form-control" id="dtEquipPurchasedDate" placeholder=""
-                                        [(ngModel)]="model.PurchasedDate" name="PurchasedDate"> -->
                                     <p-calendar [(ngModel)]="model.PurchaseDate" name="PurchasedDate"
-                                        id="dtEquipPurchasedDate" [dateFormat]="yy/mm/dd">
+                                        id="dtEquipPurchasedDate" [dateFormat]="yy/mm/dd" required>
                                     </p-calendar>
+                                    <div *ngIf="equipmentForm.submitted && PurchasedFrom.invalid" class="invalid-feedback">
+                                        <div *ngIf="PurchasedFrom.errors.required">Purchased From is required</div>
+                                    </div>
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="ui-g-12 ui-md-6">
                                     <label for="dtWarrentyExpireDate">Warrenty Expire Date</label>
-                                    <!-- <input type="date" class="form-control" id="dtWarrentyExpireDate" placeholder=""
-                                        [(ngModel)]="model.WarrentyExpireDate" name="WarrentyExpireDate"> -->
                                     <p-calendar [(ngModel)]="model.WarrantyExpire" name="WarrantyExpire"
                                         [dateFormat]="yy/mm/dd">
                                     </p-calendar>
+                                    <div *ngIf="equipmentForm.submitted && WarrantyExpire.invalid" class="invalid-feedback">
+                                        <div *ngIf="WarrantyExpire.errors.required">Warranty Expire is required</div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -70,7 +84,6 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                {{diagnostic}}
                 <app-common-task></app-common-task>
             </div>
         </div>

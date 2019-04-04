@@ -25,6 +25,7 @@
     "@types/gijgo": "^1.9.1",
     "@types/jquery": "^3.3.29",
     "angular-datatables": "^7.0.0",
+    "angular-validation-ghiscoding": "^1.5.26",
     "bootstrap": "^4.3.1",
     "core-js": "^2.4.1",
     "datatables.net": "^1.10.19",
