@@ -4,8 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { DataTablesModule } from 'angular-datatables';
 import { CalendarModule } from 'primeng/calendar';
+import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+import { DropdownModule } from 'primeng/dropdown';
+import {PanelModule} from 'primeng/panel';
 
 //components
 import { AppComponent } from './components/index/app.component';
@@ -28,6 +33,7 @@ import { AuthGuard } from './common/config/auth-guard';
 import { AuthService } from './services/auth/auth-service';
 import { EquipmentService } from './services/equipment-service';
 import { TokenInterceptor } from './services/auth/token-interceptor';
+import { DaterangeValidatorDirectiveDirective } from './common/validator/daterange-validator-directive.directive';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,8 @@ import { TokenInterceptor } from './services/auth/token-interceptor';
     EquipmentDetailComponent,
     MenuPartialComponent,
     CommonTaskComponent,
-    DatepickerComponent
+    DatepickerComponent,
+    DaterangeValidatorDirectiveDirective
   ],
   imports: [
     BrowserModule,
@@ -50,8 +57,13 @@ import { TokenInterceptor } from './services/auth/token-interceptor';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    DataTablesModule,
-    CalendarModule
+    ToastModule,
+    MessagesModule,
+    MessageModule,
+    TableModule,
+    CalendarModule,
+    DropdownModule,
+    PanelModule
   ],
   providers: [AuthGuard, AuthService, AppConstants, EquipmentService, {
     provide: HTTP_INTERCEPTORS,

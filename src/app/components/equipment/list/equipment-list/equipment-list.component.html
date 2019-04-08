@@ -2,27 +2,28 @@
   <div class="card-header py-3">
     <h6 class="float-left font-weight-bold text-primary">Equipment List</h6>
     <a [routerLink]="['/equipment', 'add']" class="btn btn-success btn-circle btn-sm float-right">
-        <i class="fas fa-plus"></i>
-      </a>
+      <i class="fas fa-plus"></i>
+    </a>
   </div>
   <div class="card-body">
     <div class="table-responsive">
-      <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Code</th>
-              <th>Model</th>
-              <th>Brand</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let equipment of equipments">
-              <td>{{ equipment.Code }}</td>
-              <td>{{ equipment.Model }}</td>
-              <td>{{ equipment.Brand }}</td>
-            </tr>
-          </tbody>
-          </table>
+      <p-table [value]="equipments"  [paginator]="true" [rows]="10">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Code</th>
+            <th>Model</th>
+            <th>Brand</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-equipment>
+          <tr>
+            <td>{{ equipment.Code }}</td>
+            <td>{{ equipment.Model }}</td>
+            <td>{{ equipment.Brand }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+
     </div>
   </div>
 </div>
