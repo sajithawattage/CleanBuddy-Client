@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EquipmentService } from '../../../../services/equipment-service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MessageService } from 'primeng/api';
+import { SelectItem, MessageService } from 'primeng/api';
+import { EquipmentService } from '../../../../services/equipment-service';
 import { Equipment } from '../../../../model/equipment';
 
 @Component({
@@ -14,9 +14,11 @@ export class EquipmentManageComponent implements OnInit {
 
   equipmentForm: FormGroup;
   submitted: boolean = false;
-  model: Equipment;
+  model: Equipment = new Equipment();
+  categories: SelectItem[];
 
-  constructor(private formBuilder: FormBuilder, private messageService: MessageService, protected equipmentService: EquipmentService) { }
+  constructor(private formBuilder: FormBuilder, private messageService: MessageService, 
+    protected equipmentService: EquipmentService) { }
 
   ngOnInit() {
     this.equipmentForm = this.formBuilder.group({
@@ -28,16 +30,32 @@ export class EquipmentManageComponent implements OnInit {
       'purchasedDate': new FormControl('', Validators.required),
       'warrantyExpireDate': new FormControl('', Validators.required)
     });
+
+    //get the categories and bind to the drop down list
+    this.equipmentService.getEquipmentCategoryList().subscribe((data:any) => {
+        var categoryList = data.Data;
+        this.categories = categoryList.map(function(x: any){
+          return {label:x.Name, value:x.ID};
+        });
+    });
   }
 
   onSubmit() {
-    this.model = this.equipmentForm.value;
-    if (this.model != null) {
-      //send data to database
-      console.log('model', this.model);
+    
+    if (this.equipmentForm.value != null) {
+       this.model.Brand = this.equipmentForm.value.brand;
+       this.model.CategoryID = this.equipmentForm.value.category;       
+       this.model.Code = this.equipmentForm.value.code;
+       this.model.Model = this.equipmentForm.value.equipmentModel;
+       this.model.PurchaseDate = this.equipmentForm.value.purchasedDate;
+       this.model.PurchasedFrom = this.equipmentForm.value.equipmentPurchesedFrom;
+       this.model.WarrantyExpire = this.equipmentForm.value.warrantyExpireDate;
 
       this.equipmentService.addNewEquipment(this.model).subscribe((data: any) => {
         this.submitted = true;
+        
+        this.equipmentForm = null;
+
         this.messageService.add({severity:'info', summary:'Success', detail:'Form Submitted'});
       },
         (err: any) => {
@@ -48,7 +66,6 @@ export class EquipmentManageComponent implements OnInit {
     }
   }
 
-
-  //get diagnostic() { return JSON.stringify(this.model); }
+  get diagnostic() { return JSON.stringify(this.equipmentForm.value); }
 
 }

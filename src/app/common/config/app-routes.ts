@@ -27,11 +27,13 @@ export const routes: Routes = [
             },
             {
                 path: 'equipment/add',
-                component: EquipmentManageComponent
+                component: EquipmentManageComponent,
+                canActivate: [AuthGuard]
             },
             {
-                path: 'equipment/detail',
-                component: EquipmentDetailComponent
+                path: 'equipment/detail/:id',
+                component: EquipmentDetailComponent,
+                canActivate: [AuthGuard]
             }
         ],
         canActivate: [AuthGuard]

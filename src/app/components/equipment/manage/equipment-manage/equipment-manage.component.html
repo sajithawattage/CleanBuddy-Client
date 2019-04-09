@@ -12,118 +12,116 @@
                         <p-toast [style]="{marginTop: '80px'}"></p-toast>
 
                         <form [formGroup]="equipmentForm" (ngSubmit)="onSubmit(equipmentForm.value)">
-                            <p-panel header="Validate">
-                                <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Code *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <input pInputText type="text" placeholder="" formControlName="code"
-                                                minlength="6" maxlength="6" required>
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Code is required"
-                                                *ngIf="!equipmentForm.controls['code'].valid&&equipmentForm.controls['code'].dirty">
-                                            </p-message>
-                                        </div>
+                            <div class="ui-grid ui-grid-responsive ui-grid-pad ui-fluid" style="margin: 10px 0px">
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Code *:
                                     </div>
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Brand *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <input pInputText type="text" formControlName="brand" placeholder=""
-                                                requireds />
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Brand is required"
-                                                *ngIf="!equipmentForm.controls['brand'].valid&&equipmentForm.controls['brand'].dirty">
-                                            </p-message>
-                                        </div>
+                                    <div class="ui-grid-col-6">
+                                        <input pInputText type="text" placeholder="" formControlName="code"
+                                            minlength="6" maxlength="6" required>
                                     </div>
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Model *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <input pInputText type="text" formControlName="equipmentModel" required
-                                                placeholder="" />
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Model is required"
-                                                *ngIf="!equipmentForm.controls['equipmentModel'].valid&&equipmentForm.controls['equipmentModel'].dirty">
-                                            </p-message>
-                                        </div>
-                                    </div>
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Category *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <p-dropdown [options]="categories" formControlName="category"></p-dropdown>
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Category is required"
-                                                *ngIf="!equipmentForm.controls['category'].valid&&equipmentForm.controls['category'].dirty">
-                                            </p-message>
-                                        </div>
-                                    </div>
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Purchesed From *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <input pInputText type="text" formControlName="equipmentPurchesedFrom"
-                                                required placeholder="" />
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Purchesed From is required"
-                                                *ngIf="!equipmentForm.controls['equipmentPurchesedFrom'].valid&&equipmentForm.controls['equipmentPurchesedFrom'].dirty">
-                                            </p-message>
-                                        </div>
-                                    </div>
-
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Purchased Date *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <p-calendar name="purchasedDate" [dateFormat]="yy/mm/dd" [required]="true">
-                                            </p-calendar>
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Purchase Date is required"
-                                                *ngIf="!equipmentForm.controls['purchasedDate'].valid&&equipmentForm.controls['purchasedDate'].dirty">
-                                            </p-message>
-                                        </div>
-                                    </div>
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2">
-                                            Warrenty Expire Date *:
-                                        </div>
-                                        <div class="ui-grid-col-6">
-                                            <p-calendar name="warrantyExpireDate" [dateFormat]="yy/mm/dd"
-                                                [required]="true">
-                                            </p-calendar>
-                                        </div>
-                                        <div class="ui-grid-col-4">
-                                            <p-message severity="error" text="Warranty expire date is required"
-                                                *ngIf="!equipmentForm.controls['warrantyExpireDate'].valid&&equipmentForm.controls['warrantyExpireDate'].dirty">
-                                            </p-message>
-                                        </div>
-                                    </div>
-
-                                    <div class="ui-grid-row">
-                                        <div class="ui-grid-col-2"></div>
-                                        <div class="ui-grid-col-6">
-                                            <button pButton type="submit" label="Submit"
-                                                [disabled]="!equipmentForm.valid"></button>
-                                        </div>
-                                        <div class="ui-grid-col-4"></div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Code is required"
+                                            *ngIf="!equipmentForm.controls['code'].valid&&equipmentForm.controls['code'].dirty">
+                                        </p-message>
                                     </div>
                                 </div>
-                            </p-panel>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Brand *:
+                                    </div>
+                                    <div class="ui-grid-col-6">
+                                        <input pInputText type="text" formControlName="brand" placeholder=""
+                                            requireds />
+                                    </div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Brand is required"
+                                            *ngIf="!equipmentForm.controls['brand'].valid&&equipmentForm.controls['brand'].dirty">
+                                        </p-message>
+                                    </div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Model *:
+                                    </div>
+                                    <div class="ui-grid-col-6">
+                                        <input pInputText type="text" formControlName="equipmentModel" required
+                                            placeholder="" />
+                                    </div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Model is required"
+                                            *ngIf="!equipmentForm.controls['equipmentModel'].valid&&equipmentForm.controls['equipmentModel'].dirty">
+                                        </p-message>
+                                    </div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Category *:
+                                    </div>
+                                    <div class="ui-grid-col-6">
+                                        <p-dropdown [options]="categories" formControlName="category"></p-dropdown>
+                                    </div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Category is required"
+                                            *ngIf="!equipmentForm.controls['category'].valid&&equipmentForm.controls['category'].dirty">
+                                        </p-message>
+                                    </div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Purchesed From *:
+                                    </div>
+                                    <div class="ui-grid-col-6">
+                                        <input pInputText type="text" formControlName="equipmentPurchesedFrom" required
+                                            placeholder="" />
+                                    </div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Purchesed From is required"
+                                            *ngIf="!equipmentForm.controls['equipmentPurchesedFrom'].valid&&equipmentForm.controls['equipmentPurchesedFrom'].dirty">
+                                        </p-message>
+                                    </div>
+                                </div>
+
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Purchased Date *:
+                                    </div>
+                                    <div class="ui-grid-col-6">
+                                        <p-calendar formControlName="purchasedDate" dateFormat="yy/mm/dd">
+                                        </p-calendar>
+                                    </div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Purchase Date is required"
+                                            *ngIf="!equipmentForm.controls['purchasedDate'].valid&&equipmentForm.controls['purchasedDate'].dirty">
+                                        </p-message>
+                                    </div>
+                                </div>
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2">
+                                        Warrenty Expire Date *:
+                                    </div>
+                                    <div class="ui-grid-col-6">
+                                        <p-calendar formControlName="warrantyExpireDate" dateFormat="yy/mm/dd"
+                                            required="true">
+                                        </p-calendar>
+                                    </div>
+                                    <div class="ui-grid-col-4">
+                                        <p-message severity="error" text="Warranty expire date is required"
+                                            *ngIf="!equipmentForm.controls['warrantyExpireDate'].valid&&equipmentForm.controls['warrantyExpireDate'].dirty">
+                                        </p-message>
+                                    </div>
+                                </div>
+
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-2"></div>
+                                    <div class="ui-grid-col-6">
+                                        <button pButton type="submit" label="Submit"
+                                            [disabled]="!equipmentForm.valid"></button>
+                                    </div>
+                                    <div class="ui-grid-col-4"></div>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

@@ -4,7 +4,7 @@ export class Equipment {
     public Code: string;
     public Brand: string;
     public Model: string;
-    public CatergoryId: number;
+    public CategoryID: number;
     public PurchasedFrom: string;        
     public PurchaseDate: Date;
     public WarrantyExpire: Date;

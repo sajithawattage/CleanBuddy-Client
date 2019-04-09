@@ -17,7 +17,6 @@ export class EquipmentListComponent implements OnInit, OnDestroy {
   constructor(private formBbuilder: FormBuilder, private equipmentService: EquipmentService, 
     private router: Router) { }
 
-  //interface methods
   ngOnInit(): void {
     this.loadEquipmentGrid();
   }
@@ -33,6 +32,10 @@ export class EquipmentListComponent implements OnInit, OnDestroy {
       (err: HttpErrorResponse) => {
         console.log('err', err);
       });
+  }
+
+  onRowEditInit(equipment : Equipment){
+    this.router.navigate(['equipment/detail', equipment.ID]);
   }
 
 }

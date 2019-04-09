@@ -15,4 +15,8 @@ export class EquipmentService {
     public addNewEquipment(dataObject: Equipment){
         return this.http.post(this.constant.equipment, dataObject);
     }
+
+    public getEquipmentCategoryList(){
+        return this.http.get(this.constant.equipmentCategory);
+    }
 }

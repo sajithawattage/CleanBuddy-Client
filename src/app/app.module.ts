@@ -20,6 +20,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EquipmentListComponent } from './components/equipment/list/equipment-list/equipment-list.component';
 import { EquipmentManageComponent } from './components/equipment/manage/equipment-manage/equipment-manage.component';
 import { EquipmentDetailComponent } from './components/equipment/detail/equipment-detail/equipment-detail.component';
+import { SiteListComponent } from './components/site/list/site-list/site-list.component';
+import { SiteManageComponent } from './components/site/manage/site-manage/site-manage.component';
 import { MenuPartialComponent } from './components/partial/menu-partial/menu-partial.component';
 import { CommonTaskComponent } from './components/partial/common-task/common-task.component';
 import { DatepickerComponent } from './components/partial/datepicker/datepicker.component';
@@ -35,6 +37,7 @@ import { EquipmentService } from './services/equipment-service';
 import { TokenInterceptor } from './services/auth/token-interceptor';
 import { DaterangeValidatorDirectiveDirective } from './common/validator/daterange-validator-directive.directive';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +50,9 @@ import { DaterangeValidatorDirectiveDirective } from './common/validator/dateran
     MenuPartialComponent,
     CommonTaskComponent,
     DatepickerComponent,
-    DaterangeValidatorDirectiveDirective
+    DaterangeValidatorDirectiveDirective,
+    SiteListComponent,
+    SiteManageComponent
   ],
   imports: [
     BrowserModule,

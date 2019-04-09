@@ -13,6 +13,7 @@
             <th>Code</th>
             <th>Model</th>
             <th>Brand</th>
+            <th></th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-equipment>
@@ -20,6 +21,8 @@
             <td>{{ equipment.Code }}</td>
             <td>{{ equipment.Model }}</td>
             <td>{{ equipment.Brand }}</td>
+            <td><button pButton type="button" 
+              icon="pi pi-pencil" class="ui-button-info" (click)="onRowEditInit(equipment)"></button></td>
           </tr>
         </ng-template>
       </p-table>
