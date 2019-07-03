@@ -2,7 +2,7 @@
   Incorrect username or password
 </div>
 <div class="container">
-<div class="row justify-content-center">
+  <div class="row justify-content-center">
 
     <div class="col-xl-10 col-lg-12 col-md-9">
 
@@ -16,14 +16,14 @@
                 <div class="text-center">
                   <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                 </div>
-                <form (ngSubmit)="onSubmit()"npm  #loginForm="ngForm" class="user">
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm" class="user">
                   <div class="form-group">
-                      <input type="text" class="form-control form-control-user" name="UserName" placeholder="Username" 
-                        required [(ngModel)]="model.UserName" name="UserName" #name="ngModel">
+                    <input type="text" class="form-control form-control-user" name="UserName" placeholder="Username"
+                      required [(ngModel)]="model.UserName" name="UserName">
                   </div>
                   <div class="form-group">
-                    <input type="password" class="form-control form-control-user"  name="Password" placeholder="Password" 
-                    required [(ngModel)]="model.Password" name="Password" #name="ngModel">
+                    <input type="password" class="form-control form-control-user" name="Password" placeholder="Password"
+                      required [(ngModel)]="model.Password" name="Password">
                   </div>
                   <div class="form-group">
                     <div class="custom-control custom-checkbox small">
@@ -31,7 +31,8 @@
                       <label class="custom-control-label" for="customCheck">Remember Me</label>
                     </div>
                   </div>
-                  <button type="submit" class="btn btn-primary btn-user btn-block" [disabled]="!loginForm.form.valid">Submit</button>
+                  <button type="submit" class="btn btn-primary btn-user btn-block"
+                    [disabled]="!loginForm.form.valid">Submit</button>
                 </form>
                 <hr>
                 <div class="text-center">

@@ -1,7 +1,7 @@
 
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { AppConstants } from "../shared/app-constants";
 import { Injectable } from "@angular/core";
+import { AppConstants } from "./constant/app-constants";
 
 @Injectable()
 export class AuthService {
