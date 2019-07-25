@@ -1,5 +1,7 @@
 # CleanerFront
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/85370488f62f49af8742e5a6a2d5ed08)](https://app.codacy.com/app/sajitha.wattage/CleanBuddy-Client?utm_source=github.com&utm_medium=referral&utm_content=sajithawattage/CleanBuddy-Client&utm_campaign=Badge_Grade_Dashboard)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
 
 ## Development server
